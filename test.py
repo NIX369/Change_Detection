@@ -1,5 +1,4 @@
 # This file contains the python implementation feature based change detector
-# Author: Bhavan Vasu
 
 import tensorflow as tf
 import keras
@@ -43,7 +42,7 @@ def extra_feat(img_path):
     x5 = tf.image.resize(block5_pool_features[0], [112, 112])
 
     F = tf.concat([x3, x2, x1, x4, x5],
-                  3)  # Change to only x1, x1+x2,x1+x2+x3..so on, inorder to visualize features from diffetrrnt blocks
+                  3)  # Change to only x1, x1+x2,x1+x2+x3..so on, inorder to visualize features from differrent blocks
     return F
 
 
@@ -76,7 +75,8 @@ def main():
     plt.axis('off')
     plt.tight_layout()
     plt.show()
-
+    
+'''
     # Uncomment For veiwing a graph for visualizing threshold selection
     plt.subplot(144)
     plt.title('Otsu Threshold selection')
@@ -85,7 +85,7 @@ def main():
 
     plt.tight_layout()
     plt.show()
-
+'''
 
 if __name__ == "__main__":
     main()
